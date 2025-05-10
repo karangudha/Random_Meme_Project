@@ -27,7 +27,7 @@ app.get('/api/coding-meme', async (req, res) => {
         const randomSubreddit = subreddits[Math.floor(Math.random() * subreddits.length)];
 
         console.log(`Fetching coding meme from r/${randomSubreddit}`);
-        const response = await fetch(`https://meme-api.com/gimme/${randomSubreddit}`);
+        const response = await fetch(`https://api.imgflip.com/get_memes${randomSubreddit}`);
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
